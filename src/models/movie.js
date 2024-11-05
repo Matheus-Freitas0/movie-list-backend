@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/database.js');
 
 
-const Movie = sequelize.define('Movie', {
+const Movies = sequelize.define('Movies', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -29,4 +29,4 @@ const Movie = sequelize.define('Movie', {
     createdAt: 'createdAt'
 });
 
-module.exports = Movie
+module.exports = Movies

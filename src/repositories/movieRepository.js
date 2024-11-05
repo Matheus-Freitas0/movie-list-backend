@@ -1,14 +1,14 @@
-const { Movie } = require('../models/movie');
+const  Movies  = require('../models/movie');
 
-class movieRepository {
+class MovieRepository {
 
     async getAllMovies() {
         try {
-            return await Movie.findAll()
+            return await Movies.findAll()
         } catch (error) {
             throw new Error(`Erro ao buscar todos os filmes: ${error.message}`);
         }
     }
 }
 
-module.exports = movieRepository;
+module.exports = MovieRepository;

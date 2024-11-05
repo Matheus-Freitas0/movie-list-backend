@@ -1,6 +1,8 @@
 const { Router } = require('express');
-const movieController = require('../controllers/movieController');
+const MovieController = require('../controllers/movieController.js');
 const router = Router();
+
+const movieController = new MovieController()
 
 router.get('/', (req, res) => movieController.getAllMovies(req, res));
 
