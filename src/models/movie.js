@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Movie = sequelize.define('Movie', {
+const Movie = sequelize.define('Movies', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,

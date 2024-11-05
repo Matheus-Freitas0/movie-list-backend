@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('./config/database');
-const routes = require('./routes/movies');
+const router = require('./routes/movies');
 const app = express()
 const port = 3000
 
@@ -15,9 +15,9 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/movie', routes)
+app.use('/movie', router)
 
-sequelize.sync({ force: true})
+sequelize.sync()
     .then(() => {
         console.log('Banco de dados sincronizado')
         app.listen(port, () => {
