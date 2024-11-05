@@ -29,4 +29,4 @@ const Movie = sequelize.define('Movie', {
     createdAt: 'createdAt'
 });
 
-export default Movie
+module.exports = Movie

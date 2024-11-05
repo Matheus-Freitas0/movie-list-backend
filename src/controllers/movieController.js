@@ -11,4 +11,4 @@ class movieController {
     }
 }
 
-export default movieController
+module.exports = movieController

@@ -1,4 +1,4 @@
-const { Movie } = require('../models/tarefa');
+const { Movie } = require('../models/movie');
 
 class movieRepository {
 
@@ -11,4 +11,4 @@ class movieRepository {
     }
 }
 
-export default movieRepository
+module.exports = movieRepository;
