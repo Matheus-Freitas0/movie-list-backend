@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-const sequelize = require('../config/database')
+import sequelize from '../config/database'
 
-const User = sequelize.define('Movie', {
+const Movie = sequelize.define('Movie', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -22,10 +22,10 @@ const User = sequelize.define('Movie', {
         type: DataTypes.STRING,
         allowNull: false,
     }
-    }, {
-        timestamps: true,
-        updatedAt: 'updatedAt',
-        createdAt: 'createdAt'
-    });
+}, {
+    timestamps: true,
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+});
 
 export default Movie
