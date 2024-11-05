@@ -1,6 +1,6 @@
-import Movie from '../models/tarefa';
+const { Movie } = require('../models/tarefa');
 
-class movieRepository{
+class movieRepository {
 
     async getAllMovies() {
         try {
