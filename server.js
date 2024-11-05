@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'src/public')));
 
 app.use('/movieList', )
 
-sequelize.sync()
+sequelize.sync({ force: true})
     .then(() => {
         console.log('Banco de dados sincronizado')
         app.listen(port, () => {

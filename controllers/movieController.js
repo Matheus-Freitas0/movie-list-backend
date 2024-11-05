@@ -1,14 +1,14 @@
-import Movie from '../models/tarefa';
+const MovieRepository = require('../repositories/movieRepository');
 
-class movieRepository{
-
-    async getAllMovies() {
+class MovieController {
+    async getAllMovie(req, res) {
         try {
-            return await Movie.findAll()
+            const movie = await MovieRepository.getAllMovie();
+            res.json(movie);
         } catch (error) {
-            throw new Error(`Erro ao buscar todos os filmes: ${error.message}`);
+            res.status(500).json({ error: error.message });
         }
     }
 }
 
-export default movieRepository
+export default MovieController
