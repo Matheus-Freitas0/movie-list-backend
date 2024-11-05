@@ -1,7 +1,7 @@
 const MovieRepository = require('../repositories/movieRepository');
 
-class MovieController {
-    async getAllMovie(req, res) {
+class movieController {
+    async getAllMovies(req, res) {
         try {
             const movie = await MovieRepository.getAllMovie();
             res.json(movie);
@@ -11,4 +11,4 @@ class MovieController {
     }
 }
 
-export default MovieController
+export default movieController

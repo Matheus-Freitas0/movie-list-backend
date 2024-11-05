@@ -1,6 +1,6 @@
 import Movie from '../models/tarefa';
 
-class MovieRepository{
+class movieRepository{
 
     async getAllMovies() {
         try {
@@ -11,4 +11,4 @@ class MovieRepository{
     }
 }
 
-export default MovieRepository
+export default movieRepository
