@@ -21,6 +21,19 @@ class movieController {
             res.status(500).json({ error: error.message });
         }
     }
+
+    async getByIdMovie(req, res) {
+        const { id } = req.params;
+        try {
+            const movie = await movieRepository.getByIdMovie(id);
+            if (!movie) {
+                return res.status(404).json({ error: 'filme não encontrado' });
+            }
+            res.json(movie);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
 }
 
 module.exports = movieController

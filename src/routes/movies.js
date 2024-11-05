@@ -6,5 +6,6 @@ const movieController = new MovieController()
 
 router.get('/list', (req, res) => movieController.getAllMovies(req, res));
 router.post('/', (req, res) => movieController.createMovie(req, res))
+router.get('/:id', (req, res) => movieController.getByIdMovie(req, res))
 
 module.exports = router
