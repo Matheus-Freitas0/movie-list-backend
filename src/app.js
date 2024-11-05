@@ -15,7 +15,7 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/movieList', routes)
+app.use('/movie', routes)
 
 sequelize.sync({ force: true})
     .then(() => {

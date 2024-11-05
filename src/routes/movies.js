@@ -4,6 +4,6 @@ const router = Router();
 
 const movieController = new MovieController()
 
-router.get('/', (req, res) => movieController.getAllMovies(req, res));
+router.get('/list', (req, res) => movieController.getAllMovies(req, res));
 
 module.exports = router
