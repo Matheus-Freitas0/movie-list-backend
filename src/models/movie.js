@@ -21,6 +21,9 @@ const Movie = sequelize.define('Movies', {
     note: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    coverUrl: {
+        type: DataTypes.STRING,
     }
 }, {
     timestamps: true,
