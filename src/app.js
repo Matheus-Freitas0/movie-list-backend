@@ -1,27 +1,23 @@
 const express = require('express');
-const sequelize = require('./config/database');
-const router = require('./routes/movies');
-const app = express()
-const port = 3000
+const bodyParser = require('body-parser');
+const sequelize = require('./config');
+const PlanRoutes = require('./routes/plans');
+const DestinationRoutes = require('./routes/destinations');
+const PhotoRoutes = require('./routes/photos');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = express();
+const port = 3000;
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-  
-    next();
-  });
+app.use(bodyParser.json());
 
-app.use('/movie', router)
+app.use('/api/plans', PlanRoutes);
+app.use('/api/destinations', DestinationRoutes);
+app.use('/api/photos', PhotoRoutes);
 
-sequelize.sync()
-    .then(() => {
-        console.log('Banco de dados sincronizado')
-        app.listen(port, () => {
-            console.log(`Servidor rodando em http://localhost:${port}`)
-        })
-    })
-    .catch(err => console.error('Erro ao sincronizar banco de dados:', err))
+sequelize.sync({ force: false }).then(() => {
+  console.log('Banco de dados sincronizado!');
+});
+
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
