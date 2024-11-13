@@ -1,6 +1,5 @@
 const Plan = require('../models/plan');
 
-
 exports.createPlan = async (req, res) => {
   const { title, description, date, imageUrl } = req.body;
   try {
